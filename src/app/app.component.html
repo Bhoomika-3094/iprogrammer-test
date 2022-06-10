@@ -1,4 +1,21 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<table class="table">
+  <th>Photo Table</th>
+  <tr *ngFor="let photo of data; let i = index">
+    <td><img src="{{ photo.url }}" style="height:30px" /></td>
+    <td>{{ photo.id }}</td>
+    <td>{{ photo.title }}</td>
+    <td><button (click)="addcompare(i)">compare</button></td>
+  </tr>
+</table>
+
+<br />
+<br />
+<table>
+  <th>compare list</th>
+  <tr *ngFor="let list of getcomparelist; let i=index">
+    <td><img src="{{ list.url }}" style="height:30px" /></td>
+    <td>{{ list.id }}</td>
+    <td>{{ list.title }}</td>
+    <td><button (click)="remove(i)">Remove List</button></td>
+  </tr>
+</table>
